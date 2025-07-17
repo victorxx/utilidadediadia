@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zara - Últimas Notícias</title>
+  <meta name="description" content="Fique por dentro das últimas notícias da Zara: lançamentos, investimentos, expansões e tendências.">
+  <meta name="keywords" content="Zara, notícias Zara, Inditex, moda, lançamentos Zara, negócios Zara">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Jane Doe">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Zara - Últimas Notícias">
+  <meta property="og:description" content="Fique por dentro das últimas notícias da Zara: lançamentos, investimentos e expansões.">
+  <meta property="og:image" content="https://example.com/banner-zara.jpg">
+  <meta property="og:url" content="https://example.com/zara-noticias">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Zara - Últimas Notícias">
+  <meta name="twitter:description" content="Fique por dentro das últimas notícias da Zara.">
+  <meta name="twitter:image" content="https://example.com/banner-zara.jpg">
+
+  <style>
+    body {
+      background: #e8f5e9;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #333;
+      padding-bottom: 80px; /* espaço para propaganda */
+    }
+    header {
+      background: #388e3c;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    #news-list {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 0 15px;
+    }
+    .news-item {
+      background: white;
+      border-radius: 6px;
+      margin-bottom: 15px;
+      padding: 15px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .news-item h3 {
+      margin: 0 0 5px;
+      font-size: 18px;
+      color: #2e7d32;
+    }
+    .news-item p {
+      margin: 0;
+      font-size: 14px;
+    }
+    button#loadMore {
+      display: block;
+      margin: 20px auto;
+      background: #2e7d32;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button#loadMore:hover {
+      background: #1b5e20;
+    }
+
+    /* Propaganda piscante */
+    .pisca-pisca {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #ff0000;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      animation: piscar 1s infinite alternate;
+      z-index: 1000;
+      box-shadow: 0 0 10px #ff4500;
+      cursor: pointer;
+    }
+    @keyframes piscar {
+      from { opacity: 1; }
+      to { opacity: 0.3; }
+    }
+
+    @media (max-width: 600px) {
+      body { padding-bottom: 120px; }
+      .pisca-pisca {
+        bottom: 10px;
+        right: 10px;
+        padding: 8px 12px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header><h1>Últimas Notícias da Zara</h1></header>
+
+  <div id="news-list"></div>
+  <button id="loadMore">Carregar Mais</button>
+
+  <div class="pisca-pisca" onclick="window.open('index.html', '_blank')">
+    💥 CONFIRA ESSA OPORTUNIDADE INCRIVEL
+  </div>
+
+  <script>
+    const noticias = [
+      { title: "Zara owner Inditex invests in robotics startup", snippet: "Inditex investe em startup de robótica com IA." },
+      { title: "Zara inaugura loja em Los Angeles", snippet: "Nova flagship em The Grove com tecnologia automática." },
+      { title: "Hotel em Paris comprado por Ortega", snippet: "Ortega compra Hotel Banke por €97M." },
+      { title: "Zara Home x Collagerie lançam móveis", snippet: "Nova coleção SS 2025 para o lar." },
+      { title: "Zara at 50: expansão global", snippet: "Inditex celebra 50 anos da marca com HQ renovada." },
+      { title: "Zara investe em tecnologia sustentável", snippet: "A marca anuncia novas fábricas com foco em energia limpa." },
+      { title: "Inditex registra aumento de 12% nas vendas", snippet: "Lucros superam expectativas no segundo trimestre." },
+      { title: "Zara lança coleção 100% reciclada", snippet: "Nova linha utiliza materiais reaproveitados em toda a produção." },
+      { title: "Aplicativo da Zara ganha realidade aumentada", snippet: "Clientes poderão experimentar roupas virtualmente." },
+      { title: "Zara abre megaloja em Paris", snippet: "Unidade contará com tecnologia inteligente e provadores digitais." },
+      { title: "Inditex planeja neutralidade de carbono até 2040", snippet: "Compromisso ambiental é reforçado pela CEO Marta Ortega." },
+      { title: "Zara Home aposta em produtos veganos", snippet: "Linha inclui fragrâncias, tecidos e utensílios cruelty-free." },
+      { title: "Zara entra no metaverso com roupas digitais", snippet: "Clientes poderão vestir avatares com peças virtuais." },
+      { title: "Nova coleção primavera vende 1 milhão de unidades em 3 dias", snippet: "Alta demanda surpreende lojistas europeus." },
+      { title: "Inditex investe em startup de robótica", snippet: "Empresa busca automatizar processos logísticos com IA." },
+      { title: "Zara lidera ranking de marcas de fast fashion", snippet: "Pesquisa internacional aponta preferência global pela marca." },
+      { title: "Zara fecha lojas físicas em regiões de baixo desempenho", snippet: "Estratégia foca em digitalização e lojas conceito." },
+      { title: "Zara lança serviço de aluguel de roupas", snippet: "Clientes poderão alugar looks por eventos e datas especiais." },
+      // ... adicione até 50 itens
+    ];
+
+    let index = 0;
+    const increment = 10;
+    const container = document.getElementById("news-list");
+    const btn = document.getElementById("loadMore");
+
+    function render() {
+      const slice = noticias.slice(index, index + increment);
+      slice.forEach(n => {
+        const div = document.createElement("div");
+        div.className = "news-item";
+        div.innerHTML = `<h3>${n.title}</h3><p>${n.snippet}</p>`;
+        container.appendChild(div);
+      });
+      index += increment;
+      if (index >= noticias.length) btn.style.display = "none";
+    }
+
+    document.addEventListener("DOMContentLoaded", render);
+    btn.addEventListener("click", render);
+  </script>
+
+</body>
+</html>
